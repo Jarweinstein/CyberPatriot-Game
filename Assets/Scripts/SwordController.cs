@@ -67,4 +67,12 @@ public class SwordController : MonoBehaviour
 		}
 	}
 
+    private void OnCollisionEnter2D(Collision2D collision) //This function added by Aidan
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyAttack>().Health -= 10;
+        }
+    }
+
 }
