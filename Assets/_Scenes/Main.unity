@@ -1695,6 +1695,11 @@ PrefabInstance:
       propertyPath: swordIdleSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3628569836607420622, guid: 626d5a4d75939064091ec554adb3de58,
+        type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626d5a4d75939064091ec554adb3de58, type: 3}
 --- !u!1001 &576052438
@@ -3757,6 +3762,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1149582625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1154687890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2317053570868067863, guid: 5ce38103196fc2142993571e26b2cf90,
+    type: 3}
+  m_PrefabInstance: {fileID: 702267606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb3bf2738bf3dd43841a0658e400f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1212277158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4788,6 +4805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6d527666ea6984db76a7db60f3fd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bar: {fileID: 1154687890}
+  attack: {fileID: 1550581361}
   moveSpeed: 0.2
   targetRange: 3
 --- !u!70 &1550581358
@@ -4818,7 +4837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba40611aeeb3454191a5b23ec91a073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  dmgDealt: 5
+  attackCooldown: 1
+  maxHealth: 10
 --- !u!1001 &1586906656
 PrefabInstance:
   m_ObjectHideFlags: 0

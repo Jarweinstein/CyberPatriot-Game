@@ -7,6 +7,22 @@ public class PlayerController : MonoBehaviour
 
 	public float moveSpeed;
 	public float turnSpeed;
+    public float Health
+    {
+        get
+        {
+            return health;
+        }
+        set
+        {
+            health = value;
+            if(health == 0)
+            {
+                killPlayer();
+            }
+        }
+    }
+   [SerializeField] float health;
 
 	public int swordCount;
 
@@ -234,4 +250,9 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 	}
+
+    void killPlayer()
+    {
+        Destroy(gameObject);
+    }
 }
