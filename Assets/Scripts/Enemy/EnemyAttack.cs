@@ -19,46 +19,10 @@ public class EnemyAttack : MonoBehaviour
             }
         }
     }
-    [SerializeField] float dmgDealt, attackCooldown;
-    public float maxHealth;
-    bool isAttacking = false;
-    float health;
+    [SerializeField] float health;
+    
     void killEnemy()
     {
         Destroy(gameObject);
-    }
-
-    private void Start()
-    {
-        health = maxHealth;
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            isAttacking = true;
-            StartCoroutine(dealDmg(collision.gameObject));
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            isAttacking = false;
-        }
-    }
-
-    IEnumerator dealDmg(GameObject player)
-    {
-        PlayerController playerScript = player.GetComponent<PlayerController>();
-        while(isAttacking)
-        {
-            playerScript.Health -= dmgDealt;
-            yield return new WaitForSeconds(attackCooldown);
-        }
-        yield return null;
     }
 }

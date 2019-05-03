@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public HealthBar bar;
-    public EnemyAttack attack;
     bool playerTargeted = false;
     public float moveSpeed, targetRange;
     Transform target;
@@ -29,7 +27,6 @@ public class EnemyFollow : MonoBehaviour
     {
         while(playerTargeted)
         {
-            bar.BarDisplay = (attack.maxHealth - (attack.maxHealth - attack.Health)).ToString();
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             transform.right = target.position - transform.position; //Look at target
             if(Vector2.Distance(transform.position, target.position) > targetRange)

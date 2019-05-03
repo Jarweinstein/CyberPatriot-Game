@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d7bb6dc3a66495841838894a5df055b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,11 +133,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 18
   turnSpeed: 10
-  swordCount: 4
-  swordIdleSpeed: 18
-  swordIdleSpin: 0.12
-  shootRate: 0.15
+  swordCount: 2
+  swordType: 0
+  swordCooldown: 1.5
+  megaSwordCooldown: 2
+  shootRate: 0.075
   shootSpeed: 30
-  swordCooldown: 1.2
-  swordPrefab: {fileID: 8071664254354888277, guid: 2a30ddd54a300d147a3497af26196682,
+  megaShootSpeed: 40
+  swordIdleSpeed: 15
+  swordIdleSpin: 0.12
+  swordIdleDrag: 1.5
+  megaSwordSpeed: 110
+  megaSwordSpin: 0.18
+  megaSwordDrag: 6
+  swordPrefabBrawler: {fileID: 3317037171012057516, guid: c5a0917d09b9901488e6090a47700f5d,
+    type: 3}
+  swordPrefabFire: {fileID: 3317037171012057516, guid: 5b37eef64762bc342b866c766956d323,
+    type: 3}
+  swordPrefabIce: {fileID: 3317037171012057516, guid: 0bf1ec472855a444d9cc65b553cb8b4e,
+    type: 3}
+  swordPrefabPsychic: {fileID: 3317037171012057516, guid: 4b0c5b5e68eb18845a7a321af502075e,
     type: 3}

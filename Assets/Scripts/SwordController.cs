@@ -12,7 +12,7 @@ public class SwordController : MonoBehaviour
 
 	private Rigidbody2D rb;
 
-	private bool rotating;
+	private bool rotating = false;
 	private Vector2 rotateTo;
 
 	public float spinSpeed = 18f;
@@ -44,13 +44,21 @@ public class SwordController : MonoBehaviour
 		main2.startRotation = rb.rotation * -Mathf.Deg2Rad;
 	}
 
-	public void AttackEffect(Vector2 location)
+	public void AttackEffect(Vector2 location, bool rotate)
 	{
 		psAttack.Play();
 
-		rotateTo = location;
-		rotating = true;
-		Invoke("StopRotating", 0.35f);
+		if (rotate)
+		{
+			rotateTo = location;
+			rotating = true;
+			Invoke("StopRotating", 0.35f);
+		}
+	}
+
+	public void StopAttackEffect()
+	{
+		psAttack.Stop();
 	}
 
 	void StopRotating()
@@ -66,13 +74,5 @@ public class SwordController : MonoBehaviour
 			rb.rotation = Mathf.LerpAngle(rb.rotation, rotationAngle, spinSpeed);
 		}
 	}
-
-    private void OnCollisionEnter2D(Collision2D collision) //This function added by Aidan
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<EnemyAttack>().Health -= 10;
-        }
-    }
 
 }
